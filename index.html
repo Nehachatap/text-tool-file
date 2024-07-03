@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Tool</title>
+    
+    <style>
+
+body {
+  background-color:#d7c0b6;
+
+}
+.app-title{
+    text-align: center;
+    color: #1f2e2e;
+    
+}
+.input-text{
+    margin-bottom: 20px; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    justify-content: space-between;
+    height: 250px;
+    width: 900px;
+    padding-top: 5px;
+    border-radius: 20px;
+    border: 5px  ;
+    font-size: 30px;
+    border-color: #8f3e5c;
+    
+}
+.result-text{
+  text-align: center;
+  color:black;
+  font-size: 30px;
+  
+}
+.btn {
+    display: inline-block;
+    border-radius: 7px;
+    background-color:#8f3e5c;
+    border:none;
+    color:bisque ; 
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+    margin: 100px;
+    
+  }
+  
+  .btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+
+  .action-button{
+    margin-left: 90px;
+    margin-right: 40px;
+
+  } </style>
+</head>
+<body>
+    <h1 class="app-title" >Text Tool </h1>
+    <input type="text" class="input-text" id="input-text" />
+    <p id="result-text" class="result-text"></p>
+    <button class="btn action-button" onclick="giveActionResult('uppercase')" ><span>UPPERCASE</span></button>
+    <button class="btn  action-button" onclick="giveActionResult('lowercase')"><span>lowercase</span></button>
+    <button class="btn action-button" onclick="giveActionResult('wordcount')" ><span>Wordcount</span></button>
+    <button class="btn  action-button" onclick="giveActionResult('charcount')"><span>Charactercount</span></button>
+    <script >function giveActionResult(action) {
+    const inputElement = document.getElementById("input-text");
+    const resultElement = document.getElementById("result-text");
+  
+    if (action === 'uppercase') {
+      resultElement.innerText = inputElement.value.toUpperCase();
+    } else if (action === 'lowercase') {
+      resultElement.innerText = inputElement.value.toLowerCase();
+    } else if (action === 'wordcount') {
+      resultElement.innerText = 'Total Words: ' + inputElement.value.split(" ").length;
+    } else {
+      resultElement.innerText = 'Total Characters: ' + inputElement.value.length;
+    }
+  }</script>
+</body>
+</html>
